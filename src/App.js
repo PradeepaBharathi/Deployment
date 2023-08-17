@@ -16,12 +16,12 @@ function App() {
 
   useEffect(()=>{
     const getStudents = async () =>{
-        const response = await fetch("https://6427aa3446fd35eb7c437e60.mockapi.io/students", {
+        const response = await fetch("https://assign-mentor-2ge7.onrender.com/app/all", {
           method:"GET",
         }); 
         const data = await response.json();
         if(data){
-          setStudents(data)
+          setStudents(data.data)
         }
     }
     getStudents();

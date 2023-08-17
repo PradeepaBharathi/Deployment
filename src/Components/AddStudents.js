@@ -19,7 +19,7 @@ const createStudent = async () =>{
       gender: gender,
 }
 
-const response = await fetch("https://6427aa3446fd35eb7c437e60.mockapi.io/students", {
+const response = await fetch("https://assign-mentor-2ge7.onrender.com/app/add-student", {
   method:"POST",
   body:JSON.stringify(newStudents),
   headers :{
@@ -27,7 +27,7 @@ const response = await fetch("https://6427aa3446fd35eb7c437e60.mockapi.io/studen
   },
 })
 const data = await response.json()
-  setStudents([...students, data])
+  setStudents([...students, data.data])
   history.push("/students")
 }
 
@@ -64,7 +64,7 @@ const data = await response.json()
         onChange={(e)=>setQualification(e.target.value)}
         />
 
-        <button
+        <button 
         onClick={createStudent}
         >Add Students</button>
     </div>

@@ -1,6 +1,7 @@
 *{
   padding: 0px;
   margin: 0px;
+  background-color: whitesmoke;
 }
 
 .main-component{
@@ -26,7 +27,8 @@
   flex-direction: column;
   gap :2rem;
  align-content: space-around;
-  border : 1px solid red;
+  border : 1px solid black;
+  border-radius: 5px;
   width : 200px;
   height: 200px;
   margin : 12px;
@@ -37,3 +39,4 @@
   gap :1rem;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 }
+

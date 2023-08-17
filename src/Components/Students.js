@@ -1,23 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Base from '../Base/Base'
-import data from '../Data/data'
-import AddStudents from './AddStudents';
-import UpdateStudents from './UpdateStudents';
+
 import { useHistory } from 'react-router-dom';
 
 function Students({students, setStudents}) {
    const history = useHistory();
     // delete functionality
     const deleteStudent = async (studId)=>{
-      
-      const response = await fetch(`https://6427aa3446fd35eb7c437e60.mockapi.io/students/${studId}`, {
+      console.log(studId)
+      const response = await fetch(`https://assign-mentor-2ge7.onrender.com/app/delete/${studId}`, {
          method:"DELETE",
       });
 
       const data = await response.json()
      if(data){
        const remainingStudents = 
-       students.filter((stud, idx)=> stud.id !== studId)
+       students.filter((stud, idx)=> stud._id !== studId)
        setStudents(remainingStudents)
      }
     }
@@ -40,8 +38,8 @@ function Students({students, setStudents}) {
                      </div>
 
                      <div className='control'>
-                     <button onClick={()=>history.push(`/edit/${stud.id}`)}>edit</button> {" "}
-                     <button onClick={()=>deleteStudent(stud.id)}>delete</button>
+                     <button onClick={()=>history.push("/edit/"+stud._id)}>edit</button> {" "}
+                     <button  onClick={()=>deleteStudent(stud._id)}>delete</button>
                      </div>
                     </div>
             ))}

@@ -6,15 +6,15 @@ const Base = ({title, description, children}) => {
   return (
     <div className='main-component base-component'>
 
-      <button
+      <button className='navbut'
       onClick={()=>history.push("/")}
       >Dashboard</button>
 
-      <button
+      <button className='navbut'
       onClick={()=>history.push("/students")}
       >Student-List</button>
 
-      <button
+      <button className='navbut'
       onClick={()=>history.push("/add")}
       >Add-student</button>
 
