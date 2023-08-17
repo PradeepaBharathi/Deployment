@@ -1,11 +1,11 @@
 
 import { Switch,Route } from 'react-router-dom';
 import './App.css';
-import Base from './Base/Base';
+
 import Students from './Components/Students.js';
 import AddStudents from './Components/AddStudents';
 import UpdateStudents from './Components/UpdateStudents';
-import data from './Data/data';
+
 import { useEffect, useState } from 'react';
 import Nopage from './Components/Nopage';
 import DashBoard from './Components/DashBoard';
